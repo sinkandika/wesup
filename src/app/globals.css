@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root {
+  font-family: 'Inter Variable', sans-serif;
+  font-style: normal;
+}
+
+@theme {
+  --font-sans: var(--font-inter), sans-serif;
+
+  --color-color-1: #7D2AF4;
+  --color-color-2: #F75443;
+
+  --color-color-3: #4CBBF2;
+  --color-color-4: #FC932B;
+
+  --color-color-5: #F4F4F4;
+  --color-color-6: #7F7F7F;
+  --color-color-7: #4A4E5E;
+  --color-color-8: #191C23;
+
+  --color-color-9: #EA2718;
+  --color-color-10: #4CC961;
+
+}

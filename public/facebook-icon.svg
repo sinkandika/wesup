@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 193.69 193.69">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4460a0;
+        fill-rule: evenodd;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="Icons">
+      <g id="Color-">
+        <path id="Facebook" class="cls-1" d="M103.46,193.69H10.69c-5.91,0-10.69-4.79-10.69-10.69V10.69C0,4.79,4.79,0,10.69,0h172.31c5.9,0,10.69,4.79,10.69,10.69v172.31c0,5.9-4.79,10.69-10.69,10.69h-49.36v-75.01h25.18l3.77-29.23h-28.95v-18.66c0-8.46,2.35-14.23,14.49-14.23h15.48v-26.15c-2.68-.36-11.87-1.15-22.56-1.15-22.32,0-37.6,13.62-37.6,38.64v21.56h-25.24v29.23h25.24v75.01h0Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
