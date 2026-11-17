@@ -1,8 +1,6 @@
 import LogoutButton from "@/src/components/LogoutButton";
 import { requireRole } from "@/src/server/lib/auth";
 
-export const instant = false;
-
 export default async function UserDashboard() {
   
   const user = await requireRole(["user"]);

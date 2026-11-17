@@ -3,8 +3,6 @@ import { requireRole } from "@/src/server/lib/auth";
 import { connection } from "next/server";
 import { ReactNode } from "react";
 
-export const instant = false;
-
 export default async function UserLayout({
   children,
 } : {
