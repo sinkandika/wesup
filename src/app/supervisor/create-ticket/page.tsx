@@ -218,6 +218,17 @@ export default function CreateTicketPage() {
     }
   }
 
+  // SUCCESS MESSAGE TIMEOUT
+  useEffect(() => {
+    if (submitSuccess) {
+      const timer = setTimeout(() => {
+        setSubmitSuccess(""); 
+      }, 3000); 
+
+      return () => clearTimeout(timer);
+    }
+  }, [submitSuccess]);
+
   return (
     <main className="text-color-8">
       <form onSubmit={handleSubmit} className="flex flex-col gap-y-2 max-w-200">

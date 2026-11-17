@@ -339,7 +339,7 @@ export default function TicketDetailModal({
     >
       <div 
       onClick={preventCloseClick}
-      className="bg-white max-h-5/6 overflow-y-auto rounded-xl relative"
+      className="bg-white max-h-5/6 overflow-y-auto rounded-xl relative max-w-200"
       >
         
         {completeMessage && (
@@ -455,7 +455,7 @@ export default function TicketDetailModal({
                 className="flex flex-col"
                 >
                   <p className="text-color-2 text-sm font-medium">Issue #{index + 1}</p>
-                  <div className="flex flex-row justify-between items-center">
+                  <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-2">
                     <div className="flex flex-col gap-2">
                       <div>
                         <p className="text-color-6 text-sm">Title</p>
