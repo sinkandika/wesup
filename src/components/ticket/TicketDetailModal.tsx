@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { PriorityStatus } from "../common/PriorityStatus";
 import { FormattedDateCols } from "../common/FormattedDate";
@@ -94,7 +94,7 @@ export default function TicketDetailModal({
   const [isCancelModalOpen, setIsCancelModalOpen] = useState(false);
 
   // PREVENT CLOSE
-  const preventCloseClick = (e) => e.stopPropagation();
+  const preventCloseClick = (e: React.MouseEvent) => e.stopPropagation();
 
   // HANDLE CLOSE
   const handleClose = () => {
