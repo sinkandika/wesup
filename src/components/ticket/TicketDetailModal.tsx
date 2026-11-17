@@ -94,7 +94,7 @@ export default function TicketDetailModal({
   const [isCancelModalOpen, setIsCancelModalOpen] = useState(false);
 
   // PREVENT CLOSE
-  const preventCloseClick = (e: React.MouseEvent) => e.stopPropagation();
+  const preventCloseClick = (e) => e.stopPropagation();
 
   // HANDLE CLOSE
   const handleClose = () => {
@@ -455,7 +455,7 @@ export default function TicketDetailModal({
                 className="flex flex-col"
                 >
                   <p className="text-color-2 text-sm font-medium">Issue #{index + 1}</p>
-                  <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-2">
+                  <div className="flex flex-col-reverse md:flex-row justify-between items-center">
                     <div className="flex flex-col gap-2">
                       <div>
                         <p className="text-color-6 text-sm">Title</p>
@@ -510,7 +510,7 @@ export default function TicketDetailModal({
                     </p>
                   </div>
                   <div>
-                    <p className="text-color-6 text-sm">Technician ID</p>
+                    <p>Technician ID</p>
                     <p>{currentAssignment.users.employee_id}</p>
                   </div>
                   <div>
@@ -525,7 +525,7 @@ export default function TicketDetailModal({
                     <p>-</p>
                   </div>
                   <div>
-                    <p className="text-color-6 text-sm">Technician ID</p>
+                    <p>Technician ID</p>
                     <p>-</p>
                   </div>
                   <div>
@@ -536,23 +536,23 @@ export default function TicketDetailModal({
               )}
             </div>
 
-            {currentReview ? (
-              <div>
-                {currentReview.status === "on_review" ? (
+            {tickets?.ticket_assignments.map((assign) => (
+              <div key={assign.id}>
+                {assign.status === "on_review" ? (
                   <div className="flex flex-col border-b border-color-5 p-8 gap-4">
                     <p className="font-medium">Completion Info</p>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10">
                       <div>
                         <p className="text-color-6 text-sm">Accepted At</p>
-                        <FormattedDateCols dateString={currentReview.accepted_at}/>
+                        <FormattedDateCols dateString={assign.accepted_at}/>
                       </div>
                       <div>
                         <p className="text-color-6 text-sm">Completed At</p>
-                        <FormattedDateCols dateString={currentReview.completed_at || "-"}/>
+                        <FormattedDateCols dateString={assign.completed_at || "-"}/>
                       </div>
                       <div>
                         <p className="text-color-6 text-sm">Technician Note</p>
-                        <p>{currentReview.technician_note || "No note provided."}</p>
+                        <p>{assign.technician_note || "No note provided."}</p>
                       </div>
                       {mode === "supervisor" && (
                         <div>
@@ -611,7 +611,7 @@ export default function TicketDetailModal({
                       </div>
                     )}
                   </div>
-                ) : currentReview.status === "on_progress" && mode === "technician" && (
+                ) : assign.status === "on_progress" && mode === "technician" && (
                   <div className="flex flex-col border-b border-color-5 p-8 gap-4">
                     <p className="font-medium">Completion Info</p>
 
@@ -658,25 +658,7 @@ export default function TicketDetailModal({
                   </div>
                 )}
               </div>
-            ) : (
-              <div className="flex flex-col border-b border-color-5 p-8 gap-4">
-                <p className="font-medium">Completion Info</p>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10">
-                  <div>
-                    <p className="text-color-6 text-sm">Accepted At</p>
-                    <p>-</p>
-                  </div>
-                  <div>
-                    <p className="text-color-6 text-sm">Completed At</p>
-                    <p>-</p>
-                  </div>
-                  <div>
-                    <p className="text-color-6 text-sm">Technician Note</p>
-                    <p>-</p>
-                  </div>
-                </div>
-              </div>
-            )}
+            ))}
           </div>
         )}
         <TicketCancelModal
